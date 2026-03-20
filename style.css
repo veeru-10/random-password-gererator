@@ -1,0 +1,113 @@
+/* Minimalistic centered layout */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f6;
+  color: #101010;
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+  width: min(380px, 95vw);
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 30px 24px;
+  box-shadow: 0 12px 30px rgba(10, 10, 15, 0.08);
+}
+
+.password-title {
+  margin: 0 0 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #121212;
+  font-size: 1.35rem;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #d7d7dc;
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #fafafa;
+}
+
+
+.password-container .input {
+  flex: 1;
+  border: none;
+  letter-spacing: .3rem;
+  font-size: 1rem;
+  background: transparent;
+  outline: none;
+  color: #111;
+}
+.input::placeholder {
+  letter-spacing: 0;
+}
+
+.password-container i {
+  color: #5f5f6b;
+  cursor: pointer;
+  opacity: .7;
+}
+.password-container i:hover{
+  opacity: 1;
+}
+
+.generate {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #111;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.generate:hover,
+.generate:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+.generate:active {
+  transform: scale(.98);
+}
+
+.alert {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  min-width: 220px;
+  max-width: 280px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(16, 20, 26, 0.9);
+  color: #fff;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translatex(100px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 20;
+}
+
+.alert.show {
+  opacity: 1;
+  transform: translatex(0);
+  pointer-events: auto;
+}
